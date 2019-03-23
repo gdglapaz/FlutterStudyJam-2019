@@ -61,7 +61,14 @@ class CardRoom extends StatelessWidget {
           image: AssetImage('assets/images/pic_house.jpg'),
           fit: BoxFit.cover
         ),
-        borderRadius: BorderRadius.circular(20.0)
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black54,
+            blurRadius: 15.0,
+            offset: Offset(0.0, 0.75)
+          )
+        ]
       )
     );
 
