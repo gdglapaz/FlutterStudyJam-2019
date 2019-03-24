@@ -6,10 +6,10 @@ class ListCardRoom extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
         children: <Widget>[
-          CardRoom(),
-          CardRoom(),
-          CardRoom(),
-          CardRoom(),
+          CardRoom("assets/images/pic_house.jpg", "Room 1"),
+          CardRoom("assets/images/pic_house2.jpeg", "Room 2"),
+          CardRoom("assets/images/pic_house3.jpeg", "Room 3"),
+          CardRoom("assets/images/pic_house4.jpeg", "Room 4"),
         ],
     );
   }

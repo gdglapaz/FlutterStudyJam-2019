@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 class CardRoom extends StatelessWidget {
   double paddingSize = 10.0;
-  
+  String pathImage = "";
+  String titleCard = "";
+
+  CardRoom(this.pathImage, this.titleCard);
+
   @override
   Widget build(BuildContext context) {
     final cardTitle = Text(
-      "Hello!!!",
+      titleCard,
       textDirection: TextDirection.ltr,
       style: TextStyle(
           color: Colors.white,
@@ -45,7 +49,7 @@ class CardRoom extends StatelessWidget {
         height: 200.0,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/pic_house.jpg'),
+                image: AssetImage(pathImage),
                 fit: BoxFit.cover
             ),
             borderRadius: BorderRadius.circular(20.0),
