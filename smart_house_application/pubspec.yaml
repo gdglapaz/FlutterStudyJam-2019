@@ -19,6 +19,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_staggered_grid_view: ^0.2.7
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +44,11 @@ flutter:
      - assets/images/pic_house3.jpeg
      - assets/images/pic_house4.jpeg
 
+
+     - assets/icons/luz.png
+     - assets/icons/temperatura.png
+     - assets/icons/conexion.png
+     - assets/icons/camera.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

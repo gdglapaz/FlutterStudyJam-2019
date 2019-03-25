@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_house_application/screens/rooms/room_detail.dart';
 
 class CardRoom extends StatelessWidget {
   double paddingSize = 10.0;
@@ -23,12 +24,20 @@ class CardRoom extends StatelessWidget {
       bottom: paddingSize,
       right: paddingSize,
       child: FloatingActionButton(
+        heroTag: "fab1_$titleCard",
         backgroundColor: Colors.black38,
+//        mini: true,
+//        tooltip: "Fav",
+        onPressed: (){
+            Navigator.push(
+            context,
+              MaterialPageRoute(builder: (context) => RoomDetail(titleCard, "In this room there are a lot of things that help to you to cook some amazing things!!!", pathImage)),
+            );
+        },
         child: Icon(
           Icons.arrow_forward_ios,
           color: Colors.white,
         ),
-        onPressed: null,
       ),
     );
 
@@ -36,6 +45,7 @@ class CardRoom extends StatelessWidget {
       top: paddingSize,
       right: paddingSize,
       child: FloatingActionButton(
+        heroTag: "fab2_$titleCard",
         backgroundColor: Colors.transparent,
         child: Icon(
           Icons.lightbulb_outline,
