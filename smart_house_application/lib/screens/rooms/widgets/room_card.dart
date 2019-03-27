@@ -21,7 +21,7 @@ class RoomCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Material(
-      color: Colors.black,
+      color: Colors.grey,
       elevation: 14.0,
       borderRadius: _borderRadius,
       child: Center(
@@ -46,7 +46,7 @@ class RoomCard extends StatelessWidget {
                       ),
 
                       Material(
-                          color: Colors.black,
+                          color: Colors.grey,
                           borderRadius:  _borderRadius,
                           child:Column(
                             children: <Widget>[

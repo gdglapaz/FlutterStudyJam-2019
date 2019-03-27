@@ -53,72 +53,94 @@ class RoomDetail extends StatelessWidget {
         )
     );
 
+    final cardGrid = Container(
+      height: 220.0,
+      child: StaggeredGridView.count(
+        scrollDirection: Axis.horizontal,
+        crossAxisCount: 2,
+        crossAxisSpacing: 12.0,
+        mainAxisSpacing: 12.0,
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        children: <Widget>[
+          RoomCard(Container(
+            color: Colors.grey,
+            width: 50.0,
+            height: 50.0,
+            child : Image.asset('assets/icons/luz.png',color: Colors.white,),
+          ),'Lights'),
+
+          RoomCard(Container(
+            color: Colors.grey,
+            width: 50.0,
+            height: 50.0,
+            child : Image.asset('assets/icons/temperatura.png',color: Colors.white,),
+          ),'Air condition'),
+
+          RoomCard(
+
+              Container(
+                color: Colors.grey,
+                width: 50.0,
+                height: 50.0,
+                child : Image.asset('assets/icons/conexion.png',color: Colors.white,),
+              )
+
+              ,'Conection'),
+
+          RoomCard(Container(
+            color: Colors.grey,
+            width: 50.0,
+            height: 50.0,
+            child : Image.asset('assets/icons/camera.png',color: Colors.white,),
+          ),'Security'),
+
+        ],
+
+        staggeredTiles: [
+          StaggeredTile.extent(2,200.0),
+          StaggeredTile.extent(2,200.0),
+          StaggeredTile.extent(2,200.0),
+          StaggeredTile.extent(2,200.0),
+        ],
+      )
+    );
 
     final cards=Container(
-        margin: EdgeInsets.fromLTRB(0, 44, 0, 0),
-        color: Colors.blueGrey,
+        transform: Matrix4.translationValues(0.0, -10.0, 0.0),
         width: 500.0,
-        height: 200.0,
-
-        child: StaggeredGridView.count(
-          scrollDirection: Axis.horizontal,
-          crossAxisCount: 2,
-          crossAxisSpacing: 12.0,
-          mainAxisSpacing: 12.0,
-          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-
+        height: 255.0,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0))
+        ),
+        child: Column(
           children: <Widget>[
-
-            RoomCard(Container(
-              color: Colors.black,
-              width: 50.0,
-              height: 50.0,
-              child : Image.asset('assets/icons/luz.png',color: Colors.white,),
-            ),'Lights'),
-
-            RoomCard(Container(
-              color: Colors.black,
-              width: 50.0,
-              height: 50.0,
-              child : Image.asset('assets/icons/temperatura.png',color: Colors.white,),
-            ),'Air condition'),
-
-            RoomCard(
-
-                Container(
-                  color: Colors.black,
-                  width: 50.0,
-                  height: 50.0,
-                  child : Image.asset('assets/icons/conexion.png',color: Colors.white,),
-                )
-
-                ,'Conection'),
-
-            RoomCard(Container(
-              color: Colors.black,
-              width: 50.0,
-              height: 50.0,
-              child : Image.asset('assets/icons/camera.png',color: Colors.white,),
-            ),'Security'),
-
-          ],
-
-          staggeredTiles: [
-            StaggeredTile.extent(2,200.0),
-            StaggeredTile.extent(2,200.0),
-            StaggeredTile.extent(2,200.0),
-            StaggeredTile.extent(2,200.0),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                margin: EdgeInsets.only(left: 20.0, top: 14.0),
+                child: Text(
+                  "OPPORTUNITIES",
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              )
+            ),
+            cardGrid
           ],
         )
     );
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
         backgroundColor: Colors.black,
       ),
       body: Container(
-        decoration: new BoxDecoration(color: Colors.black87),
+        decoration: new BoxDecoration(color: Colors.black),
         child: ListView(
           children: <Widget>[
             boardTitle,
