@@ -6,6 +6,10 @@ void main(){
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
           backgroundColor: Colors.black87,
           title: Center(
             child: Text(
@@ -16,6 +20,15 @@ void main(){
               ),
             ),
           ),
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.only(right: 10.0),
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+              )
+            ),
+          ],
         ),
         body: Home()
       ),
