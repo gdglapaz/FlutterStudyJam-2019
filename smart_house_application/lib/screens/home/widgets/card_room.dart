@@ -26,8 +26,6 @@ class CardRoom extends StatelessWidget {
       child: FloatingActionButton(
         heroTag: "fab1_$titleCard",
         backgroundColor: Colors.black38,
-//        mini: true,
-//        tooltip: "Fav",
         onPressed: (){
             Navigator.push(
             context,
@@ -72,7 +70,6 @@ class CardRoom extends StatelessWidget {
             ]
         )
     );
-
 
     return Container(
       margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),

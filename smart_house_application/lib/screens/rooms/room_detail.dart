@@ -18,10 +18,9 @@ class RoomDetail extends StatelessWidget {
         image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(roomPicture)
-        ),
+        )
       ),
     );
-
 
     final boardTitle = Container(
         padding: EdgeInsets.all(15.0),
@@ -53,8 +52,6 @@ class RoomDetail extends StatelessWidget {
           ),
         )
     );
-
-
 
 
     final cards=Container(
@@ -119,7 +116,7 @@ class RoomDetail extends StatelessWidget {
         decoration: new BoxDecoration(color: Colors.black87),
         child: Column(
           children: <Widget>[
-            boardTitle,
+//            boardTitle,
             boardDescription,
             boardPicture,
             cards,
@@ -127,5 +124,6 @@ class RoomDetail extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
