@@ -68,6 +68,7 @@ class RoomDetail extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
 
           children: <Widget>[
+
             RoomCard(Container(
               color: Colors.black,
               width: 50.0,
@@ -82,12 +83,16 @@ class RoomDetail extends StatelessWidget {
               child : Image.asset('assets/icons/temperatura.png',color: Colors.white,),
             ),'Air condition'),
 
-            RoomCard(Container(
-              color: Colors.black,
-              width: 50.0,
-              height: 50.0,
-              child : Image.asset('assets/icons/conexion.png',color: Colors.white,),
-            ),'Conection'),
+            RoomCard(
+
+                Container(
+                  color: Colors.black,
+                  width: 50.0,
+                  height: 50.0,
+                  child : Image.asset('assets/icons/conexion.png',color: Colors.white,),
+                )
+
+                ,'Conection'),
 
             RoomCard(Container(
               color: Colors.black,
@@ -116,7 +121,7 @@ class RoomDetail extends StatelessWidget {
         decoration: new BoxDecoration(color: Colors.black87),
         child: Column(
           children: <Widget>[
-//            boardTitle,
+            boardTitle,
             boardDescription,
             boardPicture,
             cards,
