@@ -7,9 +7,14 @@ void main(){
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black87,
-          title: Text(
-            "Smart House App",
-            textDirection: TextDirection.ltr,
+          title: Center(
+            child: Text(
+              "Smart House App",
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                fontSize: 24.0
+              ),
+            ),
           ),
         ),
         body: Home()
