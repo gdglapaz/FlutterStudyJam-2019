@@ -119,7 +119,7 @@ class RoomDetail extends StatelessWidget {
       ),
       body: Container(
         decoration: new BoxDecoration(color: Colors.black87),
-        child: Column(
+        child: ListView(
           children: <Widget>[
             boardTitle,
             boardDescription,
