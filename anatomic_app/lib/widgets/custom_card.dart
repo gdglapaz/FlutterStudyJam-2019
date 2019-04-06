@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:anatomic_app/widgets/custom_text.dart';
+import 'package:anatomic_app/screens/training_screen.dart';
 
 class CustomCard extends StatelessWidget {
   double mPaddingCard = 10.0;
@@ -65,26 +66,29 @@ class CustomCard extends StatelessWidget {
       width: mCustomWidth,
       height: mCustomHeight,
       margin: EdgeInsets.only(left: 10.0, right: 10.0),
-      child: Stack(
-        children: <Widget>[
-          mContainer,
-          Positioned(
-            bottom: mPaddingCard,
-            left: mPaddingCard,
-            child: CustomText(mTitle, Colors.white, mTitleSize),
+      child: Hero(
+          tag: "mHero_$mId",
+          child: Stack(
+            children: <Widget>[
+              mContainer,
+              Positioned(
+                bottom: mPaddingCard,
+                left: mPaddingCard,
+                child: CustomText(mTitle, Colors.white, mTitleSize),
+              ),
+              Positioned(
+                top: mVerticalTopPadding,
+                left: mPaddingCard,
+                child: mIndicators,
+              ),
+              Positioned(
+                right: mPaddingCard,
+                top: mPaddingCard,
+                child: mFab,
+              )
+            ],
           ),
-          Positioned(
-            top: mVerticalTopPadding,
-            left: mPaddingCard,
-            child: mIndicators,
-          ),
-          Positioned(
-            right: mPaddingCard,
-            top: mPaddingCard,
-            child: mFab,
-          )
-        ],
-      ),
+      )
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anatomic_app/screens/home_screen.dart';
 
 void main(){
-  Color mPurpleColor = Color(0xFF6200ea);
+  Color mPurpleColor = Color(0xFF311b92);
 
   final avatar = Stack(
     children: <Widget>[
