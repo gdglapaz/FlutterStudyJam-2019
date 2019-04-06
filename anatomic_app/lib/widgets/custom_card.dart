@@ -5,6 +5,7 @@ class CustomCard extends StatelessWidget {
   double mPaddingCard = 10.0;
   double mCustomWidth = 300;
   double mCustomHeight = 200;
+  double mVerticalTopPadding = 10.0;
 
   int mId;
   String mTitle;
@@ -12,12 +13,15 @@ class CustomCard extends StatelessWidget {
   Icon mIcon;
   Color mFilter = Colors.deepPurple;
   double mOpacity = 0.3;
+  double mTitleSize = 32.0;
 
   CustomCard(this.mId, this.mTitle, this.mPathImage,this.mIcon);
   CustomCard.vertical(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter){
     this.mOpacity = 0.1;
     this.mCustomWidth = 170.0;
     this.mCustomHeight = 230.0;
+    this.mVerticalTopPadding = 180.0;
+    this.mTitleSize = 22.0;
   }
 
   @override
@@ -41,12 +45,12 @@ class CustomCard extends StatelessWidget {
           Icons.access_time,
           color: Colors.white,
         ),
-        CustomText("15'", Colors.white, 16.0),
+        CustomText.margin("15'", Colors.white, 16.0, 5.0, 15.0, 0.0, 0.0),
         Icon(
           Icons.timelapse,
           color: Colors.white,
         ),
-        CustomText("6", Colors.white, 16.0)
+        CustomText.margin("6", Colors.white, 16.0, 5.0, 15.0, 0.0, 0.0)
       ],
     );
 
@@ -67,10 +71,10 @@ class CustomCard extends StatelessWidget {
           Positioned(
             bottom: mPaddingCard,
             left: mPaddingCard,
-            child: CustomText(mTitle, Colors.white, 22.0),
+            child: CustomText(mTitle, Colors.white, mTitleSize),
           ),
           Positioned(
-            top: mPaddingCard,
+            top: mVerticalTopPadding,
             left: mPaddingCard,
             child: mIndicators,
           ),
