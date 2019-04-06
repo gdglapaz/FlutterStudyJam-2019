@@ -8,7 +8,11 @@ class TrainingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: CustomCard.vertical(2, "Prueba 2", "assets/pic_1.jpg",Icon(Icons.account_balance_wallet), mPurpleColor )
+        body: Hero(
+          tag: "mHero_2",
+          child: CustomCard.hero(0, "Prueba 2", "assets/pic_1.jpg",Icon(Icons.account_balance_wallet), mPurpleColor )
+
+        )
       ),
     );
   }

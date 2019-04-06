@@ -25,6 +25,14 @@ class CustomCard extends StatelessWidget {
     this.mTitleSize = 22.0;
   }
 
+  CustomCard.hero(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter){
+    this.mOpacity = 0.1;
+    this.mCustomWidth = null;
+    this.mCustomHeight = null;
+    this.mVerticalTopPadding = 180.0;
+    this.mTitleSize = 22.0;
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -62,33 +70,40 @@ class CustomCard extends StatelessWidget {
       child: mIcon,
     );
 
-    return Container(
-      width: mCustomWidth,
-      height: mCustomHeight,
-      margin: EdgeInsets.only(left: 10.0, right: 10.0),
-      child: Hero(
-          tag: "mHero_$mId",
-          child: Stack(
-            children: <Widget>[
-              mContainer,
-              Positioned(
-                bottom: mPaddingCard,
-                left: mPaddingCard,
-                child: CustomText(mTitle, Colors.white, mTitleSize),
-              ),
-              Positioned(
-                top: mVerticalTopPadding,
-                left: mPaddingCard,
-                child: mIndicators,
-              ),
-              Positioned(
-                right: mPaddingCard,
-                top: mPaddingCard,
-                child: mFab,
-              )
-            ],
-          ),
-      )
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (_){
+          return TrainingScreen();
+        }));
+      },
+      child: Container(
+          width: mCustomWidth,
+          height: mCustomHeight,
+          margin: EdgeInsets.only(left: 10.0, right: 10.0),
+          child: Hero(
+            tag: "mHero_$mId",
+            child: Stack(
+              children: <Widget>[
+                mContainer,
+                Positioned(
+                  bottom: mPaddingCard,
+                  left: mPaddingCard,
+                  child: CustomText(mTitle, Colors.white, mTitleSize),
+                ),
+                Positioned(
+                  top: mVerticalTopPadding,
+                  left: mPaddingCard,
+                  child: mIndicators,
+                ),
+                Positioned(
+                  right: mPaddingCard,
+                  top: mPaddingCard,
+                  child: mFab,
+                )
+              ],
+            ),
+          )
+      ),
     );
   }
 }
