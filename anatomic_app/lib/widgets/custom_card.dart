@@ -35,6 +35,8 @@ class CustomCard extends StatelessWidget {
     );
 
     final mFab = FloatingActionButton(
+      heroTag: "mFab_$mId",
+      onPressed: null,
       backgroundColor: Colors.black26,
       child: mIcon,
     );
