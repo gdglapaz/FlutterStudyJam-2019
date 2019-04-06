@@ -23,10 +23,10 @@ class HomeScreen extends StatelessWidget {
       color: Colors.white,
       child: ListView(
         children: <Widget>[
-          CustomText("April 6th", Colors.grey, 18.0),
-          CustomText("Ready to Learn?", Colors.deepPurple, 24.0),
+          CustomText.margin("April 6th", Colors.grey, 18.0, 20.0, 0.0, 20.0, 10.0),
+          CustomText.margin("Ready to Learn?", Colors.deepPurple, 24.0, 20.0, 0.0, 0.0, 30.0),
           CustomCard(1, "Prueba", "assets/bones_1.jpg",Icon(Icons.account_balance_wallet), ),
-          CustomText("Handpicked", Colors.deepPurple, 20.0),
+          CustomText.margin("Handpicked", Colors.deepPurple, 20.0, 20.0, 0.0, 20.0, 30.0),
           mVerticalList
         ],
       ),
