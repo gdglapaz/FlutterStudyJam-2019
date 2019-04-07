@@ -7,6 +7,9 @@ class CustomCard extends StatelessWidget {
   double mCustomWidth = 300;
   double mCustomHeight = 200;
   double mVerticalTopPadding = 10.0;
+  double mVerticalTopTitlePadding = 10.0;
+  double mCustomMargin = 10.0;
+  double mBorderRadius = 15.0;
 
   int mId;
   String mTitle;
@@ -15,22 +18,32 @@ class CustomCard extends StatelessWidget {
   Color mFilter = Colors.deepPurple;
   double mOpacity = 0.3;
   double mTitleSize = 32.0;
+  BuildContext mContext;
 
-  CustomCard(this.mId, this.mTitle, this.mPathImage,this.mIcon);
+  CustomCard(this.mId, this.mTitle, this.mPathImage,this.mIcon){
+    this.mVerticalTopTitlePadding = 120.0;
+  }
+
   CustomCard.vertical(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter){
     this.mOpacity = 0.1;
     this.mCustomWidth = 170.0;
     this.mCustomHeight = 230.0;
     this.mVerticalTopPadding = 180.0;
     this.mTitleSize = 22.0;
+    this.mVerticalTopTitlePadding = 177.0;
   }
 
-  CustomCard.hero(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter){
+  CustomCard.hero(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter, this.mContext){
     this.mOpacity = 0.1;
     this.mCustomWidth = null;
     this.mCustomHeight = null;
-    this.mVerticalTopPadding = 180.0;
-    this.mTitleSize = 22.0;
+    this.mVerticalTopPadding = 110.0;
+    this.mTitleSize = 28.0;
+    this.mVerticalTopTitlePadding = 30.0;
+    this.mCustomMargin = 0.0;
+    this.mBorderRadius = 0.0;
+    this.mPaddingCard = 35.0;
+
   }
 
   @override
@@ -39,7 +52,7 @@ class CustomCard extends StatelessWidget {
     final mContainer = Container(
       decoration: BoxDecoration(
         color: mFilter,
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(mBorderRadius),
         image: DecorationImage(
             colorFilter: ColorFilter.mode(mFilter.withOpacity(mOpacity), BlendMode.dstATop),
             image: AssetImage(mPathImage),
@@ -64,6 +77,7 @@ class CustomCard extends StatelessWidget {
     );
 
     final mFab = FloatingActionButton(
+      mini: true,
       heroTag: "mFab_$mId",
       onPressed: null,
       backgroundColor: Colors.black26,
@@ -72,21 +86,23 @@ class CustomCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (_){
-          return TrainingScreen();
-        }));
+        if(mId > 0){
+          Navigator.push(context, MaterialPageRoute(builder: (_){
+            return TrainingScreen(mId, mTitle, mPathImage, mIcon, mFilter);
+          }));
+        }
       },
       child: Container(
           width: mCustomWidth,
           height: mCustomHeight,
-          margin: EdgeInsets.only(left: 10.0, right: 10.0),
+          margin: EdgeInsets.only(left: mCustomMargin, right: mCustomMargin),
           child: Hero(
             tag: "mHero_$mId",
             child: Stack(
               children: <Widget>[
                 mContainer,
                 Positioned(
-                  bottom: mPaddingCard,
+                  top: mVerticalTopTitlePadding + (mPaddingCard*3),
                   left: mPaddingCard,
                   child: CustomText(mTitle, Colors.white, mTitleSize),
                 ),
