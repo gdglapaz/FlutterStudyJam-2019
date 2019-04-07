@@ -33,17 +33,22 @@ class TrainingScreen extends StatelessWidget {
     );
 
     final HeadBar = Container(
+      height: 40.0,
+      width: 200.0,
       child: Row(
         children: <Widget>[
-          SizedBox(
-              height: 30.0,
-              width: 30.0,
-              child: IconButton(
-                icon: Icon(Icons.arrow_back_ios, size: 30.0, color: Colors.white),
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-              )
+          Material(
+            color: Colors.transparent,
+            child: SizedBox(
+                height: 30.0,
+                width: 30.0,
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back_ios, size: 30.0, color: Colors.white),
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                )
+            ),
           ),
           CustomText.margin("Handpicked", Colors.white, 22.0, 15.0, 0.0,15.0,0.0),
         ],
