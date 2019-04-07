@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mVerticalList = Container(
       height: 240.0,
+      margin: EdgeInsets.only(bottom: 10.0),
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
