@@ -17,14 +17,17 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: mLeftMaring, right: mRightMargin, top: mTopMargin, bottom: mBottomMargin),
-      child: Text(
-        mTitle,
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-          color: mColor,
-          fontSize: mSize,
-          fontWeight: FontWeight.w500
-        ),
+      child: Material(
+          color: Colors.transparent,
+          child: Text(
+            mTitle,
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+                color: mColor,
+                fontSize: mSize,
+                fontWeight: FontWeight.w500
+            ),
+          )
       ),
     );
   }
