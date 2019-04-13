@@ -4,7 +4,7 @@ import 'package:html/dom.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
-
+import 'package:studyjam4/school_detail.dart';
 
 void main() => runApp(MyApp());
 
@@ -50,19 +50,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ListView.builder(
                   itemCount: 5,
                     itemBuilder: (context,index){
-                      return Column(
-                        children: <Widget>[
-                          Padding (
-                            padding: EdgeInsets.all(8.0),
+                      return GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (_){
+                            return SchoolDetail();
+                          }));
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Padding (
+                              padding: EdgeInsets.all(8.0),
 
-                          ),
-                          Colegio(
-                              '${data['features'][index]['properties']['UNIDAD_EDU']}',
-                              'Centro',
-                              'Sopocahi'
-                          ),
+                            ),
+                            Colegio(
+                                '${data['features'][index]['properties']['UNIDAD_EDU']}',
+                                'Centro',
+                                'Sopocahi'
+                            ),
 
-                        ],
+                          ],
+                        ),
                       );
                     }
                 ),
