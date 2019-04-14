@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       return GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (_){
-                            return SchoolDetail();
+                            return SchoolDetail(mSchoolName: data['features'][index]['properties']['UNIDAD_EDU'], mLat: data['features'][index]['properties']['latitud'], mLon: data['features'][index]['properties']['longitud']);
                           }));
                         },
                         child: Column(
