@@ -28,7 +28,7 @@ class MapSampleState extends State<SchoolDetail> {
         widget.mLat,
         widget.mLon,
       ),
-      infoWindow: InfoWindow(title: widget.mSchoolName, snippet: '*'),
+      infoWindow: InfoWindow(title: widget.mSchoolName, snippet: '*****'),
     );
 
     markers[markerId] = marker;
