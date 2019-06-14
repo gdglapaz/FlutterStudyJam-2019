@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:anatomic_app/widgets/custom_card.dart';
+import 'package:anatomic_app/widgets/custom_training_widget.dart';
 import 'package:anatomic_app/widgets/custom_text.dart';
 
 class TrainingScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class TrainingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final ListHandPicked = Container(
-      height: 400.0,
+      height: 450.0,
       margin: EdgeInsets.only(top:100.0, left: 20.0, right: 20.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
@@ -61,7 +61,7 @@ class TrainingScreen extends StatelessWidget {
           tag: "mHero_$mId",
           child: Stack(
             children: <Widget>[
-              CustomCard.hero(0, mTitle, mPathImage, mIcon, mColor, context),
+              CustomTrainingWidget.hero(0, mTitle, mPathImage, mIcon, mColor, context),
               Center(
                 child: ListHandPicked,
               ),
@@ -112,7 +112,7 @@ class HandpickedCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                CustomText.margin(mTitle, mPurpleColor, 18.0, 10.0, 0.0, 10.0, 5.0),
+                CustomText.margin(mTitle, mPurpleColor, 18.0, 10.0, 0.0, 10.0, 0.0),
                 CustomText.margin(mTSubttle, Colors.black38, 14.0, 10.0, 0.0,0.0,0.0),
               ],
             ),

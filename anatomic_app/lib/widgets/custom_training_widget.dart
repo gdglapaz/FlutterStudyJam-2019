@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anatomic_app/widgets/custom_text.dart';
 import 'package:anatomic_app/screens/training_screen.dart';
 
-class CustomCard extends StatelessWidget {
+class CustomTrainingWidget extends StatelessWidget {
   double mPaddingCard = 10.0;
   double mCustomWidth = 300;
   double mCustomHeight = 200;
@@ -20,30 +20,16 @@ class CustomCard extends StatelessWidget {
   double mTitleSize = 32.0;
   BuildContext mContext;
 
-  CustomCard(this.mId, this.mTitle, this.mPathImage,this.mIcon){
-    this.mVerticalTopTitlePadding = 120.0;
-  }
-
-  CustomCard.vertical(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter){
+  CustomTrainingWidget.hero(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter, this.mContext){
     this.mOpacity = 0.1;
-    this.mCustomWidth = 170.0;
-    this.mCustomHeight = 230.0;
-    this.mVerticalTopPadding = 180.0;
-    this.mTitleSize = 22.0;
-    this.mVerticalTopTitlePadding = 177.0;
-  }
-
-  CustomCard.hero(this.mId, this.mTitle, this.mPathImage,this.mIcon, this.mFilter, this.mContext){
-    this.mOpacity = 0.1;
-    this.mCustomWidth = null;
-    this.mCustomHeight = null;
+    this.mCustomWidth = double.infinity;
+    this.mCustomHeight = double.infinity;
     this.mVerticalTopPadding = 110.0;
     this.mTitleSize = 28.0;
     this.mVerticalTopTitlePadding = 30.0;
     this.mCustomMargin = 0.0;
     this.mBorderRadius = 0.0;
     this.mPaddingCard = 35.0;
-
   }
 
   @override
@@ -51,13 +37,13 @@ class CustomCard extends StatelessWidget {
 
     final mContainer = Container(
       decoration: BoxDecoration(
-        color: mFilter,
-        borderRadius: BorderRadius.circular(mBorderRadius),
-        image: DecorationImage(
-            colorFilter: ColorFilter.mode(mFilter.withOpacity(mOpacity), BlendMode.dstATop),
-            image: AssetImage(mPathImage),
-            fit: BoxFit.cover
-        )
+          color: mFilter,
+          borderRadius: BorderRadius.circular(mBorderRadius),
+          image: DecorationImage(
+              colorFilter: ColorFilter.mode(mFilter.withOpacity(mOpacity), BlendMode.dstATop),
+              image: AssetImage(mPathImage),
+              fit: BoxFit.cover
+          )
       ),
     );
 
@@ -80,8 +66,8 @@ class CustomCard extends StatelessWidget {
       width: 50.0,
       height: 50.0,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50.0),
-        color: Colors.black26
+          borderRadius: BorderRadius.circular(50.0),
+          color: Colors.black26
       ),
       child: mIcon,
     );
@@ -98,9 +84,7 @@ class CustomCard extends StatelessWidget {
           width: mCustomWidth,
           height: mCustomHeight,
           margin: EdgeInsets.only(left: mCustomMargin, right: mCustomMargin),
-          child: Hero(
-            tag: "mHero_$mId",
-            child: Stack(
+          child: Stack(
               children: <Widget>[
                 mContainer,
                 Positioned(
@@ -120,7 +104,6 @@ class CustomCard extends StatelessWidget {
                 )
               ],
             ),
-          )
       ),
     );
   }
